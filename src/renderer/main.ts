@@ -15,3 +15,5 @@ const app = createApp(App)
 init(app);
 
 app.mount('#app');
+
+// console.log(__dirname);

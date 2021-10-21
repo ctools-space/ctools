@@ -1,3 +1,6 @@
+/**
+ * 主进程和渲染进程通信
+ */
 import createMainComm, { MainComm } from '@pokemonon/electron-ipc-encapsulation/dist/main';
 
 import { initWin } from './win';

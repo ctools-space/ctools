@@ -3,7 +3,7 @@ import * as fs from 'fs';
 import * as dotenv from 'dotenv';
 import { assign, merge, sureArray } from '@pokemonon/knife';
 
-import { ENV } from '../../typings/common';
+import { ENV } from '../../src/common/utils';
 import { resolve } from '../utils/helpers';
 
 /**

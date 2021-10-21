@@ -9,7 +9,12 @@ export function initWin(ipc: RendererComm) {
         return emit(EventTypes.SET_WIN_HEIGHT, height);
     }
 
+    function loadPluginMain(id) {
+        return emit(EventTypes.LOAD_PLUGIN_MAIN, id);
+    }
+
     return {
         setWinHeight,
+        loadPluginMain,
     };
 }

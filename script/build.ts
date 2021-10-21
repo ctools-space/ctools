@@ -12,7 +12,7 @@ import { logger, Spinner } from '@pokemonon/knife/node';
 import options from './rollup.config';
 import { main } from '../package.json';
 import { getEnv } from './config/env';
-import { ENV } from '../typings/common';
+import { ENV } from '../src/common/utils';
 import { resolve } from './utils/helpers';
 
 const userEnv = getEnv();

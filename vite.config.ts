@@ -16,9 +16,6 @@ export default defineConfig({
     define: {
         ...userEnv,
     },
-    // css: {
-    //     less
-    // },
     plugins: [
         tsconfigPaths({
             root: resolve('.'),

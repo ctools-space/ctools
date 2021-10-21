@@ -3,7 +3,7 @@
         <q-list>
             <q-item
                 v-for="(item, idx) in features"
-                :key="item.id"
+                :key="item.path"
                 clickable
                 v-ripple
                 manual-focus
@@ -54,7 +54,7 @@ export default defineComponent({
     setup() {
         const wrapper = ref<HTMLElement | null>(null);
         const showChooseKey = ref(false);
-        const firstFeatureIdx = ref(0);
+        const firstFeatureIdx = ref(0); // 屏幕中第一个元素的列表下标
         const featureItems = reactive<ComponentPublicInstance[]>([]);
         const { features, curFeatureIdx } = mapState(home.state, ['features', 'curFeatureIdx']);
         const { setCurFeatureIdx } = home.commit;
@@ -167,8 +167,8 @@ export default defineComponent({
         function listenScroll() {
             function listener() {
                 firstFeatureIdx.value = getFirstFeatureIdx();
-                console.log('asdfasdf', firstFeatureIdx.value);
             }
+            wrapper.value?.addEventListener('scroll', listener);
             rmListenScroll = () => {
                 wrapper.value?.removeEventListener('scroll', listener);
             };

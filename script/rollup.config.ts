@@ -13,7 +13,9 @@ import { merge } from '@pokemonon/knife';
 
 import { getEnvWhole } from './config/env';
 import { resolve } from './utils/helpers';
-import { ENV } from '../typings/common';
+import { ENV } from '../src/common/utils';
+import { getBuiltInPlugins, getBuiltInPluginStatics } from './build-plugins';
+import { getWorkers } from './build-worker';
 
 const userEnv = getEnvWhole();
 
@@ -39,6 +41,7 @@ export default (env: ENV = ENV.PRODUCTION) => {
             copy({
                 targets: [
                     { src: resolve('src/static'), dest: resolve('dist') },
+                    ...getBuiltInPluginStatics(),
                 ],
             }),
         ],
@@ -66,6 +69,8 @@ export default (env: ENV = ENV.PRODUCTION) => {
                 sourcemap: true,
             },
         },
+        ...getBuiltInPlugins(),
+        ...getWorkers(),
     ];
     
     return builds.map(conf => merge({}, baseConf, conf));

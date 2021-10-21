@@ -1,0 +1,18 @@
+{
+    "name": "utools-loader",
+    "displayName": "utools加载工具",
+    "main": "index.js",
+    "logo": "https://pic1.zhimg.com/80/v2-036eb2dca3ca307dbdfcdbefcaaa73fe_720w.jpg?source=1940ef5c",
+    "platform": ["darwin"],
+    "features": [
+        {
+            "code": "home",
+            "explain": "utools加载工具",
+            "platform": ["darwin"],
+            "cmds": [
+                "utools",
+                "utools加载工具"
+            ]
+        }
+    ]
+}

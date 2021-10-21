@@ -9,6 +9,8 @@ import Home from 'renderer/views/home/index.vue';
 import HomeMarket from 'renderer/views/home/pages/tabs/pages/market/index.vue';
 import HomeManagement from 'renderer/views/home/pages/tabs/pages/management/index.vue';
 import HomePreference from 'renderer/views/home/pages/tabs/pages/preference/index.vue';
+import HomePlugin from 'renderer/views/home/pages/plugin/index.vue';
+import HomePluginHeader from 'renderer/views/home/pages/plugin/components/header.vue';
 
 const router = createRouter({
     history: createWebHashHistory(),
@@ -26,6 +28,14 @@ const router = createRouter({
                     components: {
                         header: HomeFeaturesHeader,
                         default: HomeFeatures,
+                    },
+                },
+                {
+                    name: 'home-plugin',
+                    path: 'plugin/:id?',
+                    components: {
+                        header: HomePluginHeader,
+                        default: HomePlugin,
                     },
                 },
                 {

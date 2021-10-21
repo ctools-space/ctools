@@ -2,7 +2,9 @@
 import { MainComm } from '@pokemonon/electron-ipc-encapsulation/dist/main';
 import { assign } from '@pokemonon/knife';
 
-import { openPreference } from 'main/browsers';
+import { loadPluginMain, openPreference } from 'main/browsers';
+import { featureManager } from 'main/feature';
+import { PluginFeature } from 'main/plugin/main';
 import { SetBoundsInDisOpts , BrowserWindow, winMaxHeight } from 'main/utils';
 
 import * as eventTypes from './event-types';
@@ -29,6 +31,12 @@ export function initWin(ipc: MainComm) {
 
     on(eventTypes.OPEN_PREFERENCE, (evt, resolve) => {
         openPreference();
+        resolve();
+    });
+
+    on(eventTypes.LOAD_PLUGIN_MAIN, (evt, id, resolve) => {
+        const feature = featureManager.findById(id) as PluginFeature;
+        loadPluginMain(feature);
         resolve();
     });
 }

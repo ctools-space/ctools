@@ -1,0 +1,22 @@
+{
+    "name": "screenshot",
+    "displayName": "截图",
+    "main": "index.js",
+    "logo": "static/logo.png",
+    "platform": ["darwin"],
+    "development": {
+        "main": "http://localhost:3002/screenshot/index.html"
+    },
+    "features": [
+        {
+            "code": "color picker",
+            "explain": "取色器",
+            "icon": "static/logo.png",
+            "platform": ["darwin"],
+            "cmds": [
+                "color picker",
+                "取色器"
+            ]
+        }
+    ]
+}

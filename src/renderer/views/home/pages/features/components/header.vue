@@ -38,7 +38,7 @@
 
 <script lang="ts">
 import { ComponentPublicInstance, computed, ref } from 'vue';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 
 import { home, mapState } from 'renderer/store';
 import { Keys } from 'renderer/utils';
@@ -50,6 +50,7 @@ export default {
         const curIdx = ref(-1);
         const placeholder = ref('Hi, ctools');
         const { keyword, curFeatureIdx } = mapState(home.state, ['keyword', 'curFeatureIdx']);
+        const router = useRouter();
         // const { setCurFeatureIdx } = home.commit;
         // const route = useRoute();
 
@@ -67,7 +68,7 @@ export default {
         }
 
         function openTabs() {
-
+            router.replace({ name: 'home-tabs-preference' });
         }
 
         function search(str: string) {

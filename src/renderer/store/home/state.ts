@@ -1,6 +1,6 @@
 import { reactive } from 'vue';
 
-import { FeatureInfo } from 'main/ipc/source';
+import { FeatureInfo } from 'main/utils';
 
 export interface HomeState {
     loading: boolean;

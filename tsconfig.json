@@ -30,6 +30,9 @@
             "@pokemonon/knife*": [
                 "@pokemonon/knife/dist*",
                 "./node_modules/@pokemonon/knife/dist*"
+            ],
+            "ctools": [
+                "src/main/plugin/api.ts"
             ]
         },
         "allowSyntheticDefaultImports": true,

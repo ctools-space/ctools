@@ -12,7 +12,9 @@ export function mountAPI() {
         ...initSource(ipc),
     };
     contextBridge.exposeInMainWorld('utils', ctoolAPI);
+    contextBridge.exposeInMainWorld('ipc', ipc);
     return ctoolAPI;
 }
 
 export type Utils = ReturnType<typeof mountAPI>
+export type IPC = typeof ipc
